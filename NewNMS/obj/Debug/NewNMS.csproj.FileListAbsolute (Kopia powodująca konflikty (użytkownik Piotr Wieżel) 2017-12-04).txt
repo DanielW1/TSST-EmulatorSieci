@@ -1,0 +1,118 @@
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NewNMS.exe.config
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NewNMS.exe
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NewNMS.pdb
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NetworkingTools.exe
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NetworkingTools.pdb
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\obj\Debug\NewNMS.Application.resources
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\obj\Debug\NewNMS.exe
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\obj\Debug\NewNMS.pdb
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NetworkNode.exe
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NetworkNode.pdb
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NetworkCableCloud.exe
+E:\SEMESTR 5\TSST\NewNMS\NewNMS\bin\Debug\NetworkCableCloud.pdb
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe.config
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\obj\Debug\NewNMS.exe
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\obj\Debug\NewNMS.pdb
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NewNMS.pdb
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.exe
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.exe
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.exe
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.pdb
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.pdb
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.pdb
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Application.resources
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+E:\SEMESTR 5\TSST\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe.config
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\obj\Debug\NewNMS.exe
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\obj\Debug\NewNMS.pdb
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NewNMS.pdb
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.exe
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.exe
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.exe
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.pdb
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.pdb
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.pdb
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Application.resources
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+C:\Users\Damian\Desktop\NetworkEmulationODPAWŁA\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+C:\Users\Damian\Desktop\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe.config
+C:\Users\Damian\Desktop\NetworkEmulation\NewNMS\obj\Debug\NewNMS.exe
+C:\Users\Damian\Desktop\NetworkEmulation\NewNMS\obj\Debug\NewNMS.pdb
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe.config
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\obj\Debug\NewNMS.exe
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\obj\Debug\NewNMS.pdb
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NewNMS.pdb
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.exe
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.exe
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.exe
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.pdb
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.pdb
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.pdb
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Application.resources
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+E:\Piotr\Programowanie\C#\TSST-Project\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe.config
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\obj\Debug\NewNMS.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\obj\Debug\NewNMS.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NewNMS.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NewNMS.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NetworkNode.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NetworkingTools.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\bin\Debug\NetworkCableCloud.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Application.resources
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\NetworkEmulation\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NewNMS.exe.config
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\obj\Debug\NewNMS.exe
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\obj\Debug\NewNMS.pdb
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NewNMS.exe
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NewNMS.pdb
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NetworkingTools.exe
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NetworkNode.exe
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NetworkCableCloud.exe
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NetworkNode.pdb
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NetworkingTools.pdb
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\bin\Debug\NetworkCableCloud.pdb
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\obj\Debug\NewNMS.Application.resources
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+E:\Users\Paweł\Desktop\Daniel\NetworkEmulationnewss\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+E:\Users\Paweł\Desktop\Daniel\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NewNMS.exe.config
+E:\Users\Paweł\Desktop\Daniel\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.exe
+E:\Users\Paweł\Desktop\Daniel\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.pdb
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NewNMS.exe.config
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.exe
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.pdb
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.csprojResolveAssemblyReference.cache
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.Application.resources
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.Properties.Resources.resources
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\obj\Debug\NewNMS.csproj.GenerateResource.Cache
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NewNMS.exe
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NewNMS.pdb
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NetworkingTools.exe
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NetworkNode.exe
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NetworkCableCloud.exe
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NetworkNode.pdb
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NetworkingTools.pdb
+E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NewNMS\bin\Debug\NetworkCableCloud.pdb
