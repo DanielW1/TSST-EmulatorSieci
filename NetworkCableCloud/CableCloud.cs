@@ -50,9 +50,6 @@ namespace NetworkCalbleCloud
 
         private static List<string> tableTo = new List<string>();
 
-        // private static List<List<byte[]>> listOfList = new List<List<byte[]>>();
-
-
         public static byte[] msg;
 
 
@@ -228,7 +225,7 @@ namespace NetworkCalbleCloud
         /// </summary>      
         /// <param name="adresIPListener">Parametrem jest adres IP na ktorym nasluchujemy  </param>
         ///  /// <param name="key">Parametrem jest warotsc klucza wlasnosci z pliku config  </param>
-        private static Socket ListenAsync(string adresIPListener, string key, CancellationToken cancellationToken = default(CancellationToken))
+        private static async void ListenAsync(string adresIPListener, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
             Socket socketClient = null;
             Socket listener = null;
@@ -291,10 +288,11 @@ namespace NetworkCalbleCloud
                         //Oczekiwanie w petli na przyjscie danych
                         while (true)
                         {
-
+                           
                             //Odebranie tablicy bajtow na obslugiwanym w watku sluchaczu
-
-                            msg = sl.ProcessRecivedBytes(socketClient);
+                           
+                                msg = sl.ProcessRecivedBytes(socketClient);
+                           
 
                             // Package.extractHowManyPackages(msg);
                             // listByte.Add(msg);
@@ -325,6 +323,7 @@ namespace NetworkCalbleCloud
 
 
                             }
+                            
                         }
                         Listening = true;
 
@@ -339,13 +338,7 @@ namespace NetworkCalbleCloud
             {
                 // StopListening();
             }
-            if (socketClient == null)
-            {
-                return new Socket(ipAddress.AddressFamily,
-                           SocketType.Stream, ProtocolType.Tcp);
-            }
-
-            return socketClient;
+            
         }
 
         public static void stateReceivedMessage(byte[] bytes, Socket socket)

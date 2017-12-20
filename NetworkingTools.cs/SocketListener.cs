@@ -174,61 +174,63 @@ namespace NetworkingTools
 
         public byte[] ProcessRecivedBytes(Socket client, CancellationToken cancellationToken = default(CancellationToken))
         {
-            IPEndPoint ippoint = client.LocalEndPoint as IPEndPoint;
-            cancellationToken.ThrowIfCancellationRequested();
-            try
-            {
-                byte[] buffer = new byte[64];
-                byte[] package;
-                int bytesRead = client.Receive(buffer);
-
-
-                do
+            
+                IPEndPoint ippoint = client.LocalEndPoint as IPEndPoint;
+                cancellationToken.ThrowIfCancellationRequested();
+                try
                 {
-                    package = new byte[64];
-                    Array.Copy(buffer, package, bytesRead);
-                    /*Console.WriteLine("We got: " + Package.exctractDestinationIP(package).ToString() + " " + Package.extractBand(package).ToString()
-                         + " " + Package.extractFrequency(package).ToString() + " " + Package.extractPackageNumber(package).ToString()
-                         + " " + Package.extractPortNumber(package).ToString() + " " + Package.extractUsableInfoLength(package).ToString()
-                        + " " + Package.exctractSourceIP(package).ToString() + " " + Package.extractUsableMessage(package, Package.extractUsableInfoLength(package)));*/
-                    bytesRead = 0;
-                } while (bytesRead > 0);
+                    byte[] buffer = new byte[64];
+                    byte[] package;
+                    int bytesRead = client.Receive(buffer);
 
 
-                return package.ToArray();
+                    do
+                    {
+                        package = new byte[64];
+                        Array.Copy(buffer, package, bytesRead);
+                        /*Console.WriteLine("We got: " + Package.exctractDestinationIP(package).ToString() + " " + Package.extractBand(package).ToString()
+                             + " " + Package.extractFrequency(package).ToString() + " " + Package.extractPackageNumber(package).ToString()
+                             + " " + Package.extractPortNumber(package).ToString() + " " + Package.extractUsableInfoLength(package).ToString()
+                            + " " + Package.exctractSourceIP(package).ToString() + " " + Package.extractUsableMessage(package, Package.extractUsableInfoLength(package)));*/
+                        bytesRead = 0;
+                    } while (bytesRead > 0);
 
-            }
-            catch (OperationCanceledException)
-            {
-                Console.WriteLine("Timeout");
-                return null;
-            }
-            catch (ObjectDisposedException)
-            {
-                Console.WriteLine("Link for connection was broken- " + ippoint.ToString());
-                return null;
-            }
-            catch (SocketException)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("Lack connect incomming on " + ippoint.Address.ToString() + " - no avaliable link");
-                Console.ResetColor();
 
-                return null;
+                    return package.ToArray();
 
-            }
-            catch (Exception ioe)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("Lack connect incomming on " + ippoint.Address.ToString() + " - no avaliable link");
-                Console.ResetColor();
-                return null;
+                }
+                catch (OperationCanceledException)
+                {
+                    Console.WriteLine("Timeout");
+                    return null;
+                }
+                catch (ObjectDisposedException)
+                {
+                    Console.WriteLine("Link for connection was broken- " + ippoint.ToString());
+                    return null;
+                }
+                catch (SocketException)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Lack connect incomming on " + ippoint.Address.ToString() + " - no avaliable link");
+                    Console.ResetColor();
 
-            }
-            finally
-            {
+                    return null;
 
-            }
+                }
+                catch (Exception ioe)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Lack connect incomming on " + ippoint.Address.ToString() + " - no avaliable link");
+                    Console.ResetColor();
+                    return null;
+
+                }
+                finally
+                {
+
+                }
+            
         }
 
         public byte[] ProcessRecivedBytes2(Socket client, CancellationToken cancellationToken)

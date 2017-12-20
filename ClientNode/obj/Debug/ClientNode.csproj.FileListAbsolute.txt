@@ -121,3 +121,16 @@ C:\Users\Paweł\Dropbox\tsst-project\PoprawionyNMS_Pawel\ClientNode\obj\Debug\Cl
 C:\Users\Daniel\Dropbox\tsst-project\PoprawionyNMS_Pawel\ClientNode\bin\Debug\ClientNode.exe.config
 C:\Users\Daniel\Dropbox\tsst-project\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.exe
 C:\Users\Daniel\Dropbox\tsst-project\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\bin\Debug\ClientNode.exe.config
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\bin\Debug\ClientNode.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\bin\Debug\ClientNode.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\bin\Debug\NetworkingTools.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\bin\Debug\NetworkingTools.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.ClientApplication.resources
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.StartClientApplication.resources
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache

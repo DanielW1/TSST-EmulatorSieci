@@ -1,0 +1,6 @@
+start "NMS" "NewNMS\bin\Debug\NewNMS.exe"
+start "Cable Cloud" "NetworkCableCloud\bin\Debug\NetworkCableCloud.exe"
+start "Client Node" "ClientNode\bin\Debug\ClientNode.exe"
+start "Client Node" "ClientNode\bin\Debug\ClientNode.exe"
+start "Network Node 1" "NetworkNode\bin\Debug\NetworkNode.exe"
+start "Network Node 2" "NetworkNode\bin\Debug\NetworkNode.exe"

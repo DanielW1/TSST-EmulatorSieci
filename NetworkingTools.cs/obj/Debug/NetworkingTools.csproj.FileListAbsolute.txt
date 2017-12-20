@@ -40,3 +40,10 @@ E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\Network
 E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NetworkingTools.cs\obj\Debug\NetworkingTools.csprojResolveAssemblyReference.cache
 E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NetworkingTools.cs\obj\Debug\NetworkingTools.exe
 E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\NetworkingTools.cs\obj\Debug\NetworkingTools.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\bin\Debug\NetworkingTools.exe.config
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\obj\Debug\NetworkingTools.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\obj\Debug\NetworkingTools.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\bin\Debug\NetworkingTools.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\bin\Debug\NetworkingTools.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkingTools.cs\obj\Debug\NetworkingTools.csprojResolveAssemblyReference.cache

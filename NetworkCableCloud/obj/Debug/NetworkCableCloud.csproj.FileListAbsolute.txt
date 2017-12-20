@@ -70,3 +70,12 @@ E:\Dropbox\Piotrka\Przedmioty\Sem5\TSST\tsst-project\PoprawionyNMS_Pawel\Network
 C:\Users\Paweł\Dropbox\tsst-project\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\NetworkCableCloud.exe.config
 C:\Users\Paweł\Dropbox\tsst-project\PoprawionyNMS_Pawel\NetworkCableCloud\obj\Debug\NetworkCableCloud.exe
 C:\Users\Paweł\Dropbox\tsst-project\PoprawionyNMS_Pawel\NetworkCableCloud\obj\Debug\NetworkCableCloud.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\NetworkCableCloud.exe.config
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\obj\Debug\NetworkCableCloud.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\obj\Debug\NetworkCableCloud.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\NetworkCableCloud.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\NetworkCableCloud.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\NetworkingTools.exe
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\bin\Debug\NetworkingTools.pdb
+C:\Users\Daniel\Desktop\PoprawionyNMS_Pawel\NetworkCableCloud\obj\Debug\NetworkCableCloud.csprojResolveAssemblyReference.cache
