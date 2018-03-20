@@ -23,14 +23,14 @@ namespace NewNMS
 
             try
             {
-                byte[] buffer = new byte[128];
+                byte[] buffer = new byte[64];
                 byte[] package;
-               // client.ReceiveTimeout = 4000;
+                client.ReceiveTimeout = 4000;
                 int bytesRead = client.Receive(buffer);
 
                 do
                 {
-                    package = new byte[128];
+                    package = new byte[64];
                     Array.Copy(buffer, package, bytesRead);
 
                     bytesRead = 0;

@@ -87,14 +87,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetworkNode\NetworkNode.csproj">
+    <ProjectReference Include="..\..\NetworkEmulation\NetworkNode\NetworkNode.csproj">
       <Project>{0319f67a-d211-4caf-a147-7ed11d32d1e9}</Project>
       <Name>NetworkNode</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NetworkingTools.cs\NetworkingTools.csproj">
+    <ProjectReference Include="..\..\NetworkEmulation\NetworkingTools.cs\NetworkingTools.csproj">
       <Project>{bddee68b-ac6f-4863-8b9a-69952287c4f7}</Project>
       <Name>NetworkingTools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Router2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

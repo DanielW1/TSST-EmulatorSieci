@@ -99,6 +99,27 @@ namespace NetworkNode
 
         }
 
+        public BorderNodeCommutationTableRow FindRow(string IP_IN,  string IP_Destination, short frequency)
+        {
+            //Jeden rzad tablicy komutacji 
+            BorderNodeCommutationTableRow borderRow = null;
+
+            try
+            {
+                IPAddress IP = IPAddress.Parse(IP_IN);
+
+                //Wyszukiwanie takiego rzedu, ktory ma podane IP_IN i czestotliwosc
+                borderRow = this.Table.Find(row => (row.IP_IN.ToString() == IP_IN) && (row.frequency == frequency) && (row.IP_Destination.ToString() == IP_Destination));
+
+                return borderRow;
+            }
+            catch (Exception E)
+            {
+                return borderRow;
+            }
+
+        }
+
         /// <summary>
         /// Funkcja służąca do zamiany nagłówków w wiadomościach zawartych w kolejne; Wiadomości pochodzą od klienta.
         /// </summary>
@@ -147,7 +168,7 @@ namespace NetworkNode
 
             return msg;
         }
-
+        
         /// <summary>
         /// Funkcja słuząca do zamiany nagłówka, uwzgledniajaca "-1" w czestotliwosci
         /// </summary>
@@ -173,7 +194,7 @@ namespace NetworkNode
                     p.changeFrequency(row.frequency);
                     p.changeModulationPerformance(row.modulationPerformance);
                     p.changeBitRate(row.bitRate);
-                    p.changePort(row.Port);
+                   // p.changePort(row.Port);
                 }
                 //Jak sie nie udalo, to wpisz -2 do czestotliwosci
                 else
@@ -185,10 +206,9 @@ namespace NetworkNode
                 msg = p.toBytes();
             }
             //Jak nie bylo -1, to odwolujemy sie do tabeli komutacji, ale nie brzegowej
-            else
-            {
-                msg = commutationField.commutationTable.changePackageHeader(msg, this);
-            }
+            
+                msg = commutationField.commutationTable.changePackageHeader(msg);
+            
 
 
             return msg;

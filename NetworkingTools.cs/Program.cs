@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+ 
+
 namespace NetworkingTools
 {
     /// <summary>
     /// Zestaw klas z publicznie dostępnymi funkcjami
     /// </summary>
-    class Program
+    public class Program
     {
         public static void Main(string[] args)
         {

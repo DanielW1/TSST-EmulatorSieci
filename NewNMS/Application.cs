@@ -71,7 +71,6 @@ namespace NewNMS
         private int constPort;
 
         private int numbersOfParameter;
-        private Timestamp tp = new Timestamp();
 
 
         public Application()
@@ -92,7 +91,7 @@ namespace NewNMS
 
 
         /// <summary>
-        ///  metoda zwracająca socket z listy socketów socket w zalezności od wybrania adresu w comboBocRouters
+        ///  metoda zwracająca socket z listy socketów w zalezności od wybrania adresu w comboBocRouters
         /// </summary>
         /// <returns> Socket</returns>
         private Socket returnSocket()
@@ -111,15 +110,15 @@ namespace NewNMS
             }
             catch (Exception e)
             {
-                listBoxReceived.Items.Add("[ "+ generateTimestamp() + "]" + "Fail with access to the socket");
+                listBoxReceived.Items.Add("Fail with access to the socket");
             }
 
             return sending;
         }
 
-       
+        // tworzenie wiadomości w zalezności od zaznaczonego typu wiadomości w comboBocActions
         /// <summary>
-        /// Baardzo długa funkcja tworząca wiadomość wysyłaną do agenta w zalezności od miliona textboxów przez co ejst taka długa
+        /// tworzenie wiadomości w zalezności od zaznaczonego typu wiadomości w comboBocActions
         /// </summary>
         /// <returns> byte[] </returns>
         private byte[] returnBytes()
@@ -134,7 +133,7 @@ namespace NewNMS
                     if (comboBoxActions.GetItemText(comboBoxActions.SelectedItem) == "DELETE")
                     {
                         table_in_bytes = null;
-                        string builder = string.Empty; ;
+                        string builder = string.Empty;;
                         string command = string.Empty;
                         string freq_in = string.Empty;
                         string port_in = string.Empty;
@@ -144,18 +143,8 @@ namespace NewNMS
                         builder = command + "#" + "3" + "#" + freq_in + "#" + port_in;
                         short length = (Int16)builder.Length;
                         NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
-                        if (freq_in == "" || port_in == "")
-                        {
-                            table_in_bytes = null;
-                        }
-                        else
-                        {
+                        table_in_bytes = commutation_table.toBytes();
 
-                            table_in_bytes = commutation_table.toBytes();
-                            UpdateListBoxReceived("[" + generateTimestamp() + "]  CommutationTableRow to Delete:");
-                            UpdateListBoxReceived("Frequency_IN: " + freq_in);
-                            UpdateListBoxReceived("Port_IN: " + port_in);
-                        }
                     }
                     else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
                     {
@@ -171,37 +160,18 @@ namespace NewNMS
                         port_in = (textBox_Port_IN.Text).ToString();
                         freq_out = (textBoxFrequencyOUT.Text).ToString();
                         port_out = (textBoxPort_OUT.Text).ToString();
-                        builder = command + "#" + "3" + "#" + freq_in + "#" + port_in + "#" + freq_out + "#" + port_out;
-                        short length = (Int16)builder.Length;
-                        NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
-
-                        if (freq_in == "" || port_in == "" || freq_out == "" || port_out == "")
-                        {
-                            table_in_bytes = null;
-                        }
-                        else
-                        {
-
-                            table_in_bytes = commutation_table.toBytes();
-                            UpdateListBoxReceived("[" + generateTimestamp() + "]  CommutationTableRow to Add: ");
-                            UpdateListBoxReceived("Frequency_IN: " + freq_in);
-                            UpdateListBoxReceived("Port_IN: " + port_in);
-                            UpdateListBoxReceived("Frequency_OUT: " + freq_out);
-                            UpdateListBoxReceived("Port_OUT " + port_out);
-                        }
-                    }
-                    else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "TOPOLOGY")
-                    {
-                        string builder = string.Empty;
-                        string tee = string.Empty;
-                        tee = "TOPOLOGY";
-                        builder = tee + "#" + "3";
+                        builder = command + "#" + "3" + freq_in + "#" + port_in + "#" + freq_out + "#" + port_out;
                         short length = (Int16)builder.Length;
                         NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
                         table_in_bytes = commutation_table.toBytes();
-                        UpdateListBoxReceived("[" + generateTimestamp() + "]  CommutationTableRow");
-                        UpdateListBoxReceived("Sending request of topology to the node agent");
-
+                    }
+                    else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "TOPOLOGY")
+                     {
+                        string command = string.Empty;
+                        command = "Commutation Table";
+                        short length = (Int16)command.Length;
+                        NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), command, length);
+                        table_in_bytes = commutation_table.toBytes();
                     }
                 }
                 if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Border Node Commutation Table")
@@ -216,7 +186,7 @@ namespace NewNMS
                         string Hops = string.Empty;
                         string command = string.Empty;
                         string band_out = string.Empty;
-                        string destination_IP = string.Empty;
+                        string Cloud_IP = string.Empty;
                         string Modulation = string.Empty;
                         string BitRate = string.Empty;
                         string IP_IN = string.Empty;
@@ -228,34 +198,15 @@ namespace NewNMS
                         Frequency_out = (textBoxFrequencyOUT.Text).ToString();
                         Modulation = (textBoxModulation.Text).ToString();
                         BitRate = (textBoxBitrate.Text).ToString();
-                        destination_IP = (textBoxDestination_IP.Text).ToString();
+                        Cloud_IP = (textBoxDestination_IP.Text).ToString();
                         port_out = (textBoxPort_OUT.Text).ToString();
                         Hops = (textBoxHops.Text).ToString();
 
                         builder = command + "#" + "1" + "#" + IP_IN + "#" + port_in + "#" + band_out + "#" + Frequency_out + "#" +
-                            Modulation + "#" + BitRate + "#" + destination_IP + "#" + port_out + "#" + Hops;
+                            Modulation + "#" + BitRate + "#" + Cloud_IP + "#" + port_out + "#" + Hops;
                         short length = (Int16)builder.Length;
                         NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
-
-
-                        if (IP_IN == "" || port_in == "" || band_out == "" || port_out == "" || Frequency_out == "" || Modulation == "" || BitRate == "" || destination_IP == "" || Hops == "")
-                        {
-                            table_in_bytes = null;
-                        }
-                        else
-                        {
-                            table_in_bytes = commutation_table.toBytes();
-                            UpdateListBoxReceived("[" + generateTimestamp() + "]  BorderNodeCommutationTableRow to Add:");
-                            UpdateListBoxReceived("IP_IN:" + IP_IN);
-                            UpdateListBoxReceived("Port_IN: " + port_in);
-                            UpdateListBoxReceived("Band: " + band_out);
-                            UpdateListBoxReceived("Frequency: " + Frequency_out);
-                            UpdateListBoxReceived("Modulation: " + Modulation);
-                            UpdateListBoxReceived("Bitrate: " + BitRate);
-                            UpdateListBoxReceived("destiantion_IP: " + destination_IP);
-                            UpdateListBoxReceived("Port_OUT: " + port_out);
-                            UpdateListBoxReceived("Hops: " + Hops);
-                        }
+                        table_in_bytes = commutation_table.toBytes();
 
                     }
                     if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
@@ -269,37 +220,21 @@ namespace NewNMS
                         command = this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem);
                         IP_IN = (textBox_IP_IN.Text).ToString();
                         port_in = (textBox_Port_IN.Text).ToString();
-                        destination_IP = (textBoxDestination_IP.Text).ToString();
+                        //destination_IP = (textBoxDestination_IP.Text).ToString();
 
-                        builder = command + "#" + "1" + "#" + IP_IN + "#" + port_in + "#" + destination_IP;
-                        short length = (Int16)builder.Length;
-                        NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
-                        if (IP_IN == "" || port_in == "" || destination_IP == "")
-                        {
-                            table_in_bytes = null;
-                        }
-                        else
-                        {
-
-                            table_in_bytes = commutation_table.toBytes();
-                            UpdateListBoxReceived("[" + generateTimestamp() + "]  BorderNodeCommutationTableRow to Delete: ");
-                            UpdateListBoxReceived("IP_IN:" + IP_IN);
-                            UpdateListBoxReceived("Port_IN: " + port_in);
-                            UpdateListBoxReceived("destiantion_IP: " + destination_IP);
-                        }
-                    }
-                    else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "TOPOLOGY")
-                    {
-                        table_in_bytes = null;
-                        string builder = string.Empty;
-                        string tee = string.Empty;
-                        tee = "TOPOLOGY";
-                        builder = tee + "#" + "1";
+                        builder = command + "#" + "1" + "#" + IP_IN + "#" + port_in + "#"; /* +destination_IP*/
                         short length = (Int16)builder.Length;
                         NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
                         table_in_bytes = commutation_table.toBytes();
-                        UpdateListBoxReceived("[" + generateTimestamp() + "]  BorderNodeCommutationTable: ");
-                        UpdateListBoxReceived("Sending request of topology to the node agent");
+                    }
+                      else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "TOPOLOGY")
+                      {
+                        table_in_bytes = null;
+                        string command = string.Empty;
+                        command = "Border Node Commutation Table";
+                        short length = (Int16)command.Length;
+                        NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), command, length);
+                        table_in_bytes = commutation_table.toBytes();
                     }
                 }
                 if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "EON Table")
@@ -320,23 +255,10 @@ namespace NewNMS
                         Band_in = (textBoxBand_IN.Text).ToString();
                         frequency_in = (textBoxFrequencyIN.Text).ToString();
 
-                        builder = command + "#" + "2" + "#" + Band_in + "#" + frequency_in + "#" + Band_out + "#" + Frequency_out;
+                        builder = command + "#" + "2" + "#" + frequency_in + "#" + Band_in + "#" + Frequency_out + "#" + Band_out;
                         short length = (Int16)builder.Length;
                         NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
-                        if (Band_out == "" || Frequency_out == "" || Band_in == "" || frequency_in == "")
-                        {
-                            table_in_bytes = null;
-                        }
-                        else
-                        {
-
-                            table_in_bytes = commutation_table.toBytes();
-                            UpdateListBoxReceived("[" + generateTimestamp() + "]  EONTableRow to Add:");
-                            UpdateListBoxReceived("Band_IN: " + Band_in);
-                            UpdateListBoxReceived("Frequency_IN: " + frequency_in);
-                            UpdateListBoxReceived("Band_OUT: " + Band_OUT);
-                            UpdateListBoxReceived("Frequency_OUT: " + Frequency_out);
-                        }
+                        table_in_bytes = commutation_table.toBytes();
 
                     }
                     else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
@@ -354,42 +276,25 @@ namespace NewNMS
                         Band_in = (textBoxBand_IN.Text).ToString();
                         frequency_in = (textBoxFrequencyIN.Text).ToString();
 
-                        builder = command + "#" + "2" +  "#" + Band_in + "#" + frequency_in + "#" +  Band_out + "#" +  Frequency_out;
+                        builder = command + "#" + "2" + "#" + frequency_in + "#" + Band_in + "#" + Frequency_out + "#" + Band_out;
                         short length = (Int16)builder.Length;
                         NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
-                        if (Band_out == "" || Frequency_out == "" || Band_in == "" || frequency_in == "")
-                        {
-                            table_in_bytes = null;
-                        }
-                        else
-                        {
-
-                            table_in_bytes = commutation_table.toBytes();
-                            UpdateListBoxReceived("[" + generateTimestamp() + "]  EONTableRow to Delete: ");
-                            UpdateListBoxReceived("Band_IN: " + Band_in);
-                            UpdateListBoxReceived("Frequency_IN: " + frequency_in);
-                            UpdateListBoxReceived("Band_OUT: " + Band_OUT);
-                            UpdateListBoxReceived("Frequency_OUT: " + Frequency_out);
-                        }
+                        table_in_bytes = commutation_table.toBytes();
                     }
                     else if (this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "TOPOLOGY")
                     {
                         table_in_bytes = null;
-                        string builder = string.Empty;
-                        string tee = string.Empty;
-                        tee = "TOPOLOGY";
-                        builder = tee + "#" + "2";
-                        short length = (Int16)builder.Length;
-                        NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), builder, length);
+                        string command = string.Empty;
+                        command = "EON Table";
+                        short length = (Int16)command.Length;
+                        NMSPackage commutation_table = new NMSPackage(interfaces.ElementAt(1 - 1), command, length);
                         table_in_bytes = commutation_table.toBytes();
-                        UpdateListBoxReceived("[" + generateTimestamp() + "] : EONTable ");
-                        UpdateListBoxReceived("Sending request of topology to the node agent");
                     }
                 }
             }
             catch (Exception e)
             {
-                listBoxReceived.Items.Add("[" + generateTimestamp() + "]" + "Error occured with getting data for the agent");
+                listBoxReceived.Items.Add("Error occured with getting data for the agent");
                 table_in_bytes = null;
             }
             return table_in_bytes;
@@ -400,7 +305,8 @@ namespace NewNMS
         /// </summary>
         private void ListenForConnections()
         {
-          
+            Task.Run(() =>
+            {
                 // petla po wszystkich wartościach portów agentów appconfig
                 foreach (var address in interfaces)
                 {
@@ -430,15 +336,15 @@ namespace NewNMS
                         }
                         catch (OperationCanceledException)
                         {
-                            listBoxReceived.Items.Add("[" + generateTimestamp() + "]" + "Exception during listetning");
+                            listBoxReceived.Items.Add("Exception during listetning");
                         }
                     }
                     catch (SocketException se)
                     {
-                        UpdateListBoxReceived("[" + generateTimestamp() + "]"+  "Exception during connecting with network node");
+                        UpdateListBoxReceived("Exception during connecting with network node");
                     }
                 }
-           
+            });
         }
 
         // funkcja dodajaca wiadomości do ListBoxa wraz z invokiem 
@@ -450,6 +356,23 @@ namespace NewNMS
                 listBoxReceived.SelectedIndex = listBoxReceived.Items.Count - 1;
             }));
         }
+
+        /// <summary>
+        /// funkcja dodająca statyczne elementy do comboboxów, nie zmieniające się w czasie
+        /// </summary>
+        private void ShowComboBox()
+        {
+            // elementy comboboxe'a wybierające operacje do wykonania
+            comboBoxActions.Items.Add("DELETE");
+            comboBoxActions.Items.Add("ADD");
+            comboBoxActions.Items.Add("TOPOLOGY");
+
+            comboBoxTables.Items.Add("Commutation Table");
+            comboBoxTables.Items.Add("EON Table");
+            comboBoxTables.Items.Add("Border Node Commutation Table");
+
+        }
+
 
         /// <summary>
         /// funkcja pobierająca adres IP z socketa 
@@ -478,7 +401,7 @@ namespace NewNMS
                 usableMessage = string.Empty;
 
                 //przypisywanie do paczki wiadomości przesłanej przez klienta, w tym przypadku przez agenta
-                byte[] nmspackage = new byte[128];
+                byte[] nmspackage = new byte[64];
 
                 // tylko jeden wątek moze wykonywac ten kod w danym czasie
                 //  lock (_syncRoot)
@@ -490,7 +413,7 @@ namespace NewNMS
                 {
                     // pobranie indeksu socketu z listy soecketów
                     int index = listening_socket.IndexOf(listener);
-                    UpdateListBoxReceived("[" + generateTimestamp() + "]" + "Network Node" + getIPAddressRemote(sends_socket.ElementAt(index)) + " is disconnected");
+                    UpdateListBoxReceived("Network Node" + getIPAddressRemote(sends_socket.ElementAt(index)) + " is disconnected");
                     // rozłączanie obu socketów
                     listener.Disconnect(true);
                     //send.Disconnect(true);
@@ -524,10 +447,9 @@ namespace NewNMS
                             //jesli lista z adresami IP routerów nie zawiera danego IP to je dodaje a następnie wyśwuietlam komunikat 
                             if (!routers_IP.Contains(sourceip))
                             {
-                                //dodanie do listy adresów IP agenta który wysłał wiadomosc
                                 routers_IP.Add(sourceip);
-                                UpdateListBoxReceived("[" + generateTimestamp() + "]" + " Network Node: " + sourceip + " is up");
-                                //UpdateListBoxReceived(listening_socket.Count.ToString());
+                                UpdateListBoxReceived("Network Node: " + sourceip + " is up");
+                                UpdateListBoxReceived(listening_socket.Count.ToString());
 
                             }
                             //tworze połączenie z socketem routera, który wysłał do mnie wiadomość
@@ -537,7 +459,6 @@ namespace NewNMS
 
                             short numberOfRouter = NMSPackage.extractNumberOfRouterNumber(nmspackage);
 
-                            // po kazdej wiadomosci Node is Up wysyłana jest mu jego tablica, zczytywany jest sciezka z pliku konfiguracyjenego i wysyłanie linijka po linijce
                             List<string> configurationRouter = ReadingFromFile(paths.ElementAt(numberOfRouter - 1));
                             foreach (var line in configurationRouter)
                             {
@@ -560,87 +481,25 @@ namespace NewNMS
                             }));
 
                         }
-                        //Obsułga wiadomosci Keep Alive od agenta
+                        //jesli wiadmośc keep alive
                         else if (usableMessage == "Keep Alive")
                         {
-                           
-                             //UpdateListBoxReceived("["+generateTimestamp()+"] "+ usableMessage+ "from"+ NMSPackage.exctractSourceIP(nmspackage).ToString());
-                            
-                        }
-                        else if (usableMessage == "ERROR")
-                        {
-                            UpdateListBoxReceived("[" + generateTimestamp() + "] Cannot send Table to the node agent" + NMSPackage.exctractSourceIP(nmspackage).ToString());
-                        }
-                        /// obsługa wiadomosci TOPOLOGY od agenta
-                        else if (usableMessage.StartsWith("TOPOLOGY"))
-                        {
-                            int index = listening_socket.IndexOf(listener);
-                            char[] delimiterChars = { '#' };
-                            string[] words;
-                            words = usableMessage.Split(delimiterChars);
-                            int size = words.Length;
-                            switch (Int32.Parse(words[1]))
-                            {
-                                case 1:
-                                    
 
-                                        UpdateListBoxReceived("[" + generateTimestamp() + "]  BorderNodeCommutationTableRow from: " + getIPAddressRemote(sends_socket.ElementAt(index)));
-                                        UpdateListBoxReceived("IP_IN:" + words[2]);
-                                        UpdateListBoxReceived("Port_IN: " + words[3]);
-                                        UpdateListBoxReceived("Band: " + words[4]);
-                                        UpdateListBoxReceived("Frequency: " + words[5]);
-                                        UpdateListBoxReceived("Modulation: " + words[6]);
-                                        UpdateListBoxReceived("Bitrate: " + words[7]);
-                                        UpdateListBoxReceived("destiantion_IP: " + words[8]);
-                                        UpdateListBoxReceived("Port_OUT: " + words[9]);
-                                        UpdateListBoxReceived("Hops: " + words[10]);
-                                   
-                                    
-                                    break;
-                                case 2:
-
-                                        UpdateListBoxReceived("[" + generateTimestamp() + "] : EONTableRow from: " + getIPAddressRemote(sends_socket.ElementAt(index)));
-                                        UpdateListBoxReceived("Band_IN: " + words[2]);
-                                        UpdateListBoxReceived("Frequency_IN: " + words[3]);
-                                        UpdateListBoxReceived("Band_OUT: " + words[4]);
-                                        UpdateListBoxReceived("Frequency_OUT: " + words[5]);
-                                      
-                                    break;
-                                case 3:
-                                    
-
-                                        UpdateListBoxReceived("[" + generateTimestamp() + "] : CommutationTableRow from: " + getIPAddressRemote(sends_socket.ElementAt(index)));
-                                        UpdateListBoxReceived("Frequency_IN: " + words[2]);
-                                        UpdateListBoxReceived("Port_IN: " + words[3]);
-                                        UpdateListBoxReceived("Frequency_OUT: " + words[4]);
-                                        UpdateListBoxReceived("Port_OUT " + words[5]);
-
-                                    
-                                    break;
-                                default:
-                                    break;
-                            }
-
+                            UpdateListBoxReceived(usableMessage);
 
                         }
-
                     }
                     //jesli paczka jest nullem
                     else
                     {
                         int index = listening_socket.IndexOf(listener);
                         // stwierdzam, że agent nie odpowiada, a potem go rozłączam
-                        UpdateListBoxReceived(generateTimestamp() + " Network Node" + 
-                            getIPAddressRemote(sends_socket.ElementAt(index)) + " is not responding");
-                        UpdateListBoxReceived(generateTimestamp() + " Network Node" +
-                            getIPAddressRemote(sends_socket.ElementAt(index)) + " is disconnected");
+                        UpdateListBoxReceived("Network Node" + getIPAddressRemote(sends_socket.ElementAt(index)) + " is not responding");
+                        UpdateListBoxReceived("Network Node" + getIPAddressRemote(sends_socket.ElementAt(index)) + " is disconnected");
 
-                        // usuniecie danego agenta z comboboxe'a, a takze socketów służacych do komunikacji z danym agentem
                         listening_socket.RemoveAt(index);
                         sends_socket.RemoveAt(index);
                         routers_IP.RemoveAt(index);
-
-                        // usunięcie rozłączonego agenta z comboboce'a z dostepnymi agentami
                         _Application.comboBoxRouters.Invoke(new Action(delegate ()
                         {
 
@@ -662,62 +521,25 @@ namespace NewNMS
 
         }
 
-
-        /// <summary>
-        /// metoda generująca TimeStamp do logów
-        /// </summary>
-        /// <returns></returns>
-        private string generateTimestamp()
-        {
-            return  Timestamp.generateTimestamp();
-        }
-
-
-        /// <summary>
-        /// Funkcja rozpoczynająca nasłuchiwanie NMSa
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonListen_Click_1(object sender, EventArgs e)
         {
             _Application.listBoxReceived.Items.Add("Running");
-            buttonListen.Enabled = false;
             ListenForConnections();
-
         }
 
-
-        /// <summary>
-        /// obsługa przycisku "SEND" korzystająca z dwóch metod i pobierająca z nich Socket i tablicę bajtów do wysłania
-        /// przed wysłaniem trzeba wybrać agenta oraz rodzaj operacji jaki chcemy wykonac
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonSend_Click(object sender, EventArgs e)
         {
             if (comboBoxRouters.SelectedItem != null)
             {
-
                 Socket socket = null;
                 byte[] bytes = null;
                 socket = returnSocket();
                 bytes = returnBytes();
-                if (bytes != null)
-                {
-                    socket.Send(bytes);
-                    HidetextBoxes();
-                }
-                else
-                {
-                    MessageBox.Show("[" + generateTimestamp() + "]" + "Fill in all textBoxes");
-                }
+                socket.Send(bytes);
+                HidetextBoxes();
             }
         }
 
-        /// <summary>
-        /// funkca zczytujaca parmaetry konfiguracyjne NMSa, tj interfejsy polaczneiowe z agentami,
-        ///  port na którym NMS słucha i wysyla, liczbe agentow oraz sciezki do plikow z tablicami routerow
-        /// </summary>
         private void readConfiguration()
         {
             List<Data> data = new List<Data>();
@@ -746,11 +568,7 @@ namespace NewNMS
             }
 
         }
-        /// <summary>
-        /// funkcja czytająca z pliku konfiguracyjnego zawierajace tablice routerów, zwracajaca tekst w postaci listy stringów, jeden string jedna linia tekstu - jeden wiersz tablicy
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
+
         public List<string> ReadingFromFile(string path)
         {
             List<string> listLine = new List<string>();
@@ -761,9 +579,13 @@ namespace NewNMS
                 {
                     while ((line = file.ReadLine()) != null)
                     {
+                        //takeParameterFromFile(line);
                         listLine.Add(line);
+                        // MessageBox.Show(line);
                     }
                 }
+
+
             }
             catch (Exception e)
             {
@@ -772,174 +594,113 @@ namespace NewNMS
             return listLine;
 
         }
-       
+
+        public void takeParameterFromFile(string line)
+        {
+            string a, b, c, d;
+
+            Char delimiter = '#';
+            String[] parameters = line.Split(delimiter);
+            if (parameters.Length == numbersOfParameter)
+                foreach (var substring in parameters)
+                {
+                    Console.WriteLine(substring);
+                }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             EnableTextBoxes();
         }
 
-        private void buttonHiding_Click_1(object sender, EventArgs e)
+        private void EnableTextBoxes()
+        {
+            if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Commutation Table" && comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
+            {
+                textBoxFrequencyIN.Visible = true;
+                textBox_Port_IN.Visible = true;
+                textBoxPort_OUT.Visible = true;
+                textBoxFrequencyOUT.Visible = true;
+            }
+            else if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Commutation Table" && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
+            {
+           
+                textBoxFrequencyIN.Visible = true;
+                textBox_Port_IN.Visible = true;
+
+            }
+   
+
+            if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "EON Table" && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
+            {
+
+                textBoxBand_OUT.Visible = true;
+                textBoxFrequencyOUT.Visible = true;
+                textBoxBand_IN.Visible = true;
+                textBoxFrequencyIN.Visible = true;
+            }
+
+            else if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "EON Table" && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
+            {
+                textBoxBand_OUT.Visible = true;
+                textBoxFrequencyOUT.Visible = true;
+                textBoxBand_IN.Visible = true;
+                textBoxFrequencyIN.Visible = true;
+
+            }
+        
+
+            if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Border Node Commutation Table" && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
+            {
+                textBox_IP_IN.Visible = true;
+                textBox_Port_IN.Visible = true;
+                textBoxBand_OUT.Visible = true;
+                textBoxFrequencyOUT.Visible = true;
+                textBoxModulation.Visible = true;
+                textBoxBitrate.Visible = true;
+                textBoxDestination_IP.Visible = true;
+                textBoxPort_OUT.Visible = true;
+                textBoxHops.Visible = true;
+            }
+            else if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Border Node Commutation Table" && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
+            {
+                textBox_IP_IN.Visible = true;
+                //textBoxDestination_IP.Visible = true;
+                textBox_Port_IN.Visible = true;
+
+            }
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             HidetextBoxes();
         }
 
-
-        /// <summary>
-        /// funkcja pokazująca wybrane textboxy labele w zależności od tabeli i operacji na niej wykonywanej 
-        /// </summary>
-        private void EnableTextBoxes()
-        {
-            if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Commutation Table" &&
-                comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
-            {
-                textBoxFrequencyIN.Visible = true;
-                label7.Visible = true;
-
-                textBox_Port_IN.Visible = true;
-                label5.Visible = true;
-
-                textBoxPort_OUT.Visible = true;
-                label11.Visible = true;
-
-                textBoxFrequencyOUT.Visible = true;
-                label2.Visible = true;
-            }
-            else if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Commutation Table" &&
-                this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
-            {
-
-                textBoxFrequencyIN.Visible = true;
-                label7.Visible = true;
-
-                textBox_Port_IN.Visible = true;
-                label5.Visible = true;
-            }
-
-
-            if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "EON Table" &&
-                this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
-            {
-                textBoxBand_OUT.Visible = true;
-                Band_OUT.Visible = true;
-
-                textBoxFrequencyOUT.Visible = true;
-                label2.Visible= true;
-
-                textBoxBand_IN.Visible = true;
-                label6.Visible = true;
-
-                textBoxFrequencyIN.Visible = true;
-                label7.Visible = true;
-            }
-
-            else if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "EON Table" && 
-                this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
-            {
-                textBoxBand_OUT.Visible = true;
-                Band_OUT.Visible = true;
-
-                textBoxFrequencyOUT.Visible = true;
-                label2.Visible = true;
-
-                textBoxBand_IN.Visible = true;
-                label6.Visible = true;
-
-                textBoxFrequencyIN.Visible = true;
-                label7.Visible = true;
-            }
-
-
-            if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Border Node Commutation Table" 
-                && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "ADD")
-            {
-                textBox_IP_IN.Visible = true;
-                label4.Visible = true;
-
-                textBox_Port_IN.Visible = true;
-                label5.Visible = true;
-
-                textBoxBand_OUT.Visible = true;
-                Band_OUT.Visible = true;
-
-                textBoxFrequencyOUT.Visible = true;
-                label2.Visible = true;
-
-                textBoxModulation.Visible = true;
-                label8.Visible = true;
-
-                textBoxBitrate.Visible = true;
-                label9.Visible = true;
-
-                textBoxDestination_IP.Visible = true;
-                label10.Visible = true;
-
-                textBoxPort_OUT.Visible = true;
-                label11.Visible = true;
-
-                textBoxHops.Visible = true;
-                label12.Visible = true;
-            }
-            else if (this.comboBoxTables.GetItemText(this.comboBoxTables.SelectedItem) == "Border Node Commutation Table" 
-                && this.comboBoxActions.GetItemText(this.comboBoxActions.SelectedItem) == "DELETE")
-            {
-                textBox_IP_IN.Visible = true;
-                label4.Visible = true;
-
-                textBoxDestination_IP.Visible = true;
-                label10.Visible = true;
-
-                textBox_Port_IN.Visible = true;
-                label5.Visible = true;
-
-            }
-
-        }
-
-        /// <summary>
-        /// funkca chowająca wszytskie labele i textboxy, uzywana po wsyłąaniu wiadomości w celu odjrycia wybranych parametrów do wpisania
-        /// </summary>
         private void HidetextBoxes()
         {
             textBox_IP_IN.Visible = false;
-            Band_OUT.Visible = false;
+
             textBoxBand_IN.Visible = false;
-            label2.Visible = false;
+
             textBoxModulation.Visible = false;
-            label4.Visible = false;
+
             textBoxBitrate.Visible = false;
-            label5.Visible = false;
+
             textBoxDestination_IP.Visible = false;
-            label6.Visible = false;
+
             textBoxHops.Visible = false;
-            label7.Visible = false;
+
             textBoxBand_OUT.Visible = false;
-            label8.Visible = false;
+
             textBoxFrequencyOUT.Visible = false;
-            label9.Visible = false;
+
             textBox_Port_IN.Visible = false;
-            label10.Visible = false;
+
             textBoxFrequencyIN.Visible = false;
-            label11.Visible = false;
+
             textBoxPort_OUT.Visible = false;
-            label12.Visible = false;
         }
-
-        /// <summary>
-        /// funkcja dodająca statyczne elementy do comboboxów, nie zmieniające się w czasie
-        /// </summary>
-        private void ShowComboBox()
-        {
-            // elementy comboboxe'a wybierające operacje do wykonania
-            comboBoxActions.Items.Add("DELETE");
-            comboBoxActions.Items.Add("ADD");
-            comboBoxActions.Items.Add("TOPOLOGY");
-
-            comboBoxTables.Items.Add("Commutation Table");
-            comboBoxTables.Items.Add("EON Table");
-            comboBoxTables.Items.Add("Border Node Commutation Table");
-
-        }
-
     }
 }
 

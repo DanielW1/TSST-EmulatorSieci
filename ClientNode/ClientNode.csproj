@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -54,6 +55,8 @@
     <Compile Include="ClientApplication.Designer.cs">
       <DependentUpon>ClientApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="CPCC.cs" />
+    <Compile Include="CPCCTester.cs" />
     <Compile Include="StartClientApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +100,9 @@
       <Project>{bddee68b-ac6f-4863-8b9a-69952287c4f7}</Project>
       <Name>NetworkingTools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

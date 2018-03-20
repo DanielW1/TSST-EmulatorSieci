@@ -13,7 +13,7 @@ namespace NetworkingTools
         private  IPAddress ipAddress;
         private  IPEndPoint remoteEP;
         private  Socket sendSocket;
-        private Object thislock = new object();
+        private object thislock = new object();
 
 
         public Socket ConnectToEndPoint(string IP)
@@ -65,10 +65,10 @@ namespace NetworkingTools
             try
             {
                 // byte[] byteData = msg;
-                lock (thislock)
-                {
+                
+                
                     socket.Send(msg);
-                }
+                
             }
             catch (SocketException)
             {

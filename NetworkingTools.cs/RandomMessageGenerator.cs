@@ -25,7 +25,14 @@ namespace NetworkingTools
             //Obiekt klasy Random, służy wyborowi indeksu w celu pobrania odpowiedniego znaku
             Random rand = new Random();
             //Wybranie długości wiadomości
-            int strlength = randomstrlength.Next(0, maxLengthOfMessage - 1);
+
+            /*
+             *
+              Random r = new Random();
+               int rInt = r.Next(0, 100); //for ints
+              int range = 100;
+             */
+            int strlength = randomstrlength.Next(1, 20);
 
             for (int i = 0; i < strlength; i++)
             {

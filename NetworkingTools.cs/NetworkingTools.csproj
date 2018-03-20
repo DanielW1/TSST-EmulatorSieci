@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageNames.cs" />
     <Compile Include="NetworkingToolsTester.cs" />
     <Compile Include="NMSPackage.cs" />
     <Compile Include="OperationConfiguration.cs" />

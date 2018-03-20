@@ -72,5 +72,29 @@ namespace NetworkingTools
             Assert.IsFalse(ET.CheckAvailability(rowIn));
             Assert.IsFalse(ET.CheckAvailability(rowOut));
         }
+
+        [TestMethod]
+        public void testFindFrequency()
+        {
+            EONTable ET = new EONTable();
+
+            //zapychamy łącze od 0 do 31
+            ET.addRow(new EONTableRowIN(0, 32));
+            ET.addRow(new EONTableRowIN(35, 29));
+
+            Assert.IsTrue(ET.CheckAvailability(new EONTableRowIN(32, 3)));
+
+            Assert.AreEqual(32, ET.FindFreeFrequency(3, "in"));
+            Assert.AreEqual(-1, ET.FindFreeFrequency(4, "in"));
+
+            //zapychamy łącze od 0 do 31
+            ET.addRow(new EONTableRowOut(0, 32));
+            ET.addRow(new EONTableRowOut(35, 29));
+
+            Assert.IsTrue(ET.CheckAvailability(new EONTableRowOut(32, 3)));
+
+            Assert.AreEqual(32, ET.FindFreeFrequency(3, "out"));
+            Assert.AreEqual(-1, ET.FindFreeFrequency(4, "out"));
+        }
     }
 }

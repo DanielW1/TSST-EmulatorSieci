@@ -9,6 +9,8 @@ using System.Net.Sockets;
 
 namespace ClientNode
 {
+
+
     public class ClientApp
     {
         public static SocketListener sl = new SocketListener();
@@ -20,6 +22,6 @@ namespace ClientNode
         {
 
         }
-        
+
     }
 }

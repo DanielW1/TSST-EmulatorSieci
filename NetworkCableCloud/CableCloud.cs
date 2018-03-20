@@ -63,7 +63,7 @@ namespace NetworkCalbleCloud
         private static bool Last = true;
 
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             sd = new SocketDelegate(CallbackSocket);
             messageHandling();
@@ -282,7 +282,7 @@ namespace NetworkCalbleCloud
                         socketClient.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.DontLinger, false);
                         socketClient.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
 
-                        Console.WriteLine(" [ " + Timestamp.generateTimestamp() + " ] Connection on  " + takingAddresListenerSocket(socketClient));
+                        Console.WriteLine("Polaczenie na  " + takingAddresListenerSocket(socketClient));
 
 
                         string fromAndFrequency;
@@ -300,7 +300,7 @@ namespace NetworkCalbleCloud
                             // listByte.Add(msg);
 
                             //Wykonuje jezeli nadal zestawione jest polaczenie
-                            if (socketClient.Connected && msg!=null)
+                            if (socketClient.Connected)
                             {
                                 stateReceivedMessage(msg, socketClient);
                                 //Uzyskanie czestotliwosci zawartej w naglowku- potrzebna do okreslenia ktorym laczem idzie wiadomosc
@@ -355,7 +355,7 @@ namespace NetworkCalbleCloud
             short ID = Package.extractID(bytes);
             short messageNumber = Package.extractPackageNumber(bytes);
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(" [ " + Timestamp.generateTimestamp() + " ] Node on interface " + takingAddresListenerSocket(socket) + " from link number: " + numberOfLink + 
+            Console.WriteLine("Node on interface " + takingAddresListenerSocket(socket) + " from link number: " + numberOfLink + 
                 " -  {0,2} bytes recieved. Number ID: {1,5}, number of package: " + messageNumber + "/" + Package.extractHowManyPackages(bytes), length, ID);
             Console.ResetColor();
         }
@@ -369,14 +369,14 @@ namespace NetworkCalbleCloud
                 short ID = Package.extractID(bytes);
                 short messageNumber = Package.extractPackageNumber(bytes);
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(" [ " + Timestamp.generateTimestamp() + " ] Node on interface " + takingAddresSendingSocket(socket) + " on link number: " + numberOfLink +
+                Console.WriteLine("Node on interface " + takingAddresSendingSocket(socket) + " on link number: " + numberOfLink +
                     " -  {0,2} bytes sent. Number ID: {1,5}, number of package: " + messageNumber+"/"+Package.extractHowManyPackages(bytes), length, ID);
                 Console.ResetColor();
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine(" [ " + Timestamp.generateTimestamp() + " ] Node {0} which is next hop is not responding", tableTo.ElementAt(tableFrom.IndexOf(toTable)));
+                Console.WriteLine("Node {0} which is next hop is not responding", tableTo.ElementAt(tableFrom.IndexOf(toTable)));
                 Console.ResetColor();
             }
 
